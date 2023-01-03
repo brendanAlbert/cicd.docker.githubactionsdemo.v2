@@ -32,7 +32,7 @@ jobs:
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        image: hackerman1337/springboot-cicd-githubaction-docker-example
+        image: hackerman1337/cicd.docker.githubactionsdemo
         tags: latest
         registry: docker.io
         dockerfile: Dockerfile
