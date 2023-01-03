@@ -43,6 +43,7 @@
                 </executions>
             </plugin>
 		</plugins>
+		<finalName>cicd.docker.githubactionsdemo</finalName>
 	</build>
 
 </project>
