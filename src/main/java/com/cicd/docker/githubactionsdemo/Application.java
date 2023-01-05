@@ -11,7 +11,7 @@ public class Application {
 
 	@GetMapping("/")
 	public String hello() {
-		return "Hallo, Welt!";
+		return "Bonjour tout le Monde!";
 	}
 
 	public static void main(String[] args) {
