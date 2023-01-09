@@ -28,6 +28,11 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven
+      env:
+          DATABASE: ${{ secrets.DATABASE }}
+          populate-query-metrics: true
+          ENDPOINT: ${{ secrets.ENDPOINT }}
+          KEY: ${{ secrets.KEY }}
       run: mvn clean install
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
