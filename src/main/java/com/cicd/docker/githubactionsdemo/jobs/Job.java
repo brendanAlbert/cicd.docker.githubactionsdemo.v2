@@ -14,6 +14,7 @@ public class Job {
     private String title;
     private String company;
     private String location;
+    private String jobSite;
     private String remoteHybridOnsite;
     private String pay;
     private String[] skills;
@@ -87,17 +88,33 @@ public class Job {
 
     public void setDatePosted(String datePosted) { this.datePosted = datePosted; }
 
+    public String getJobSite() {
+        return jobSite;
+    }
+
+    public void setJobSite(String jobSite) {
+        this.jobSite = jobSite;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Job job = (Job) o;
-        return Objects.equals(id, job.id) && Objects.equals(datePosted, job.datePosted) && Objects.equals(title, job.title) && Objects.equals(company, job.company) && Objects.equals(location, job.location) && Objects.equals(remoteHybridOnsite, job.remoteHybridOnsite) && Objects.equals(pay, job.pay) && Arrays.equals(skills, job.skills) && Arrays.equals(experience, job.experience);
+        return Objects.equals(id, job.id) && Objects.equals(datePosted, job.datePosted)
+                && Objects.equals(title, job.title)
+                && Objects.equals(company, job.company)
+                && Objects.equals(location, job.location)
+                && Objects.equals(jobSite, job.jobSite)
+                && Objects.equals(remoteHybridOnsite, job.remoteHybridOnsite)
+                && Objects.equals(pay, job.pay)
+                && Arrays.equals(skills, job.skills)
+                && Arrays.equals(experience, job.experience);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(id, datePosted, title, company, location, remoteHybridOnsite, pay);
+        int result = Objects.hash(id, datePosted, title, company, location, jobSite, remoteHybridOnsite, pay);
         result = 31 * result + Arrays.hashCode(skills);
         result = 31 * result + Arrays.hashCode(experience);
         return result;
@@ -111,6 +128,7 @@ public class Job {
                 ", title='" + title + '\'' +
                 ", company='" + company + '\'' +
                 ", location='" + location + '\'' +
+                ", jobSite='" + jobSite + '\'' +
                 ", remoteHybridOnsite='" + remoteHybridOnsite + '\'' +
                 ", pay='" + pay + '\'' +
                 ", skills=" + Arrays.toString(skills) +
